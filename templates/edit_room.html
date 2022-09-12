@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Chat App</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body style="height: 100vh">
+    <div class="mx-auto my-auto h-100 d-flex flex-column justify-content-center" style="width:40%">
+        <h1>Editer Une salle</h1>
+        <h3>{{ message }}</h3>
+        <form method="post">
+            <!-- User input -->
+            <div class="form-outline mb-4">
+                <input type="text" name="room_name" value="{{ room.name }}" id="form2Example1" class="form-control" />
+                <label class="form-label" for="form2Example1">Nom de salle</label>
+            </div>
+
+            <!-- members input -->
+            <div class="form-outline mb-4">
+                <input type="text" name="members" value="{{ room_members_str }}" id="form2Example2"
+                    class="form-control" />
+                <label class="form-label" for="form2Example2">members</label>
+            </div>
+
+
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Editer</button>
+
+
+
+        </form>
+    </div>
+</body>
+
+</html>
