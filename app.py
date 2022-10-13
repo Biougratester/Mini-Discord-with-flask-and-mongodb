@@ -1,7 +1,7 @@
 from fileinput import filename
 import os
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_file
 from bson.json_util import dumps
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_socketio import SocketIO, join_room, leave_room
@@ -30,6 +30,15 @@ def home():
     if current_user.is_authenticated:
         rooms = get_rooms_for_user(current_user.username)
     return render_template("index.html", rooms=rooms)
+
+ 
+@app.route("/user_image/<int:id>")
+def user_image(id):
+    try:
+        return send_file(os.path.join(app.config['UPLOAD_FOLDER'],image))
+    except:
+        return 0
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
